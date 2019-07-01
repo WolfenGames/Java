@@ -16,13 +16,26 @@ public class Plane extends Aircraft implements Flyable
 	}
 
 	@Override
-	public void registerTower(WeatherTower weatherTower) {
+	public void registerTower(WeatherTower weatherTower) 
+	{
 		if (this.weatherTower != weatherTower)
 			this.weatherTower = weatherTower;
 	}
 
 	@Override
-	public void updateConditions() {
-		weatherTower.getWeather(coordinates); // ???
+	public void updateConditions() 
+	{
+		String condition = weatherTower.getWeather(coordinates);
+		switch (condition)
+		{
+			case "RAIN":
+				break;
+			case "SUN":
+				break;
+			case "SNOW":
+				break;
+			case "FOG":
+				break;
+		}
 	}
 }

@@ -1,4 +1,4 @@
-package za.co.julianwolf.enums;
+package za.co.julianwolf.classes;
 
 public enum WeatherEnums
 {
