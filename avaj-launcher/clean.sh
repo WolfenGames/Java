@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-find . -name "*.class" -delete
+find . -name "*.class" -delete; rm sources.txt
