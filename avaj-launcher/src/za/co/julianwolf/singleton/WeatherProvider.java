@@ -2,11 +2,11 @@ package za.co.julianwolf.singleton;
 
 import za.co.julianwolf.classes.Coordinates;
 
-public class WeatherProvider
+public final class WeatherProvider
 {
-	private WeatherProvider weatherProvider;
+	private static final WeatherProvider weatherProvider = new WeatherProvider();
 	private String weather;
 	private WeatherProvider(){}
-	public WeatherProvider getProvider() { return this.weatherProvider; }
-	public String getCurrentWeather(Coordinates coordinates) { return ""; };
+	public static WeatherProvider getProvider() { return weatherProvider; }
+	public String getCurrentWeather(Coordinates coordinates) { return weather; };
 }
