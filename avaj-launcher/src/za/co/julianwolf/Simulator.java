@@ -24,7 +24,7 @@ public class Simulator {
 	}
 	
 	private static void Parse(String file) throws IOException {
-		AircraftFactory fac = new AircraftFactory(){};
+		AircraftFactory fac = new AircraftFactory();
 		WeatherTower wt = new WeatherTower();
 		try 
 		{
