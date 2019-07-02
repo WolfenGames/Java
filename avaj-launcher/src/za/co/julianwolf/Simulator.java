@@ -3,13 +3,11 @@ package za.co.julianwolf;
 import java.io.*;
 import java.util.UUID;
 
-import za.co.julianwolf.classes.Tower;
 import za.co.julianwolf.classes.WeatherTower;
 import za.co.julianwolf.factory.AircraftFactory;
 import za.co.julianwolf.interfaces.Flyable;
 
 public class Simulator {
-	static WeatherTower wt;
 	public static void main(String[] args) {
 		
 		UUID guid = UUID.randomUUID();
@@ -27,9 +25,10 @@ public class Simulator {
 	
 	private static void Parse(String file) throws IOException {
 		AircraftFactory fac = new AircraftFactory(){};
-		try {
+		WeatherTower wt = new WeatherTower();
+		try 
+		{
 			File f = new File(file); 
-  
 			BufferedReader br = new BufferedReader(new FileReader(f)); 
 			
 			String st; 
