@@ -50,10 +50,7 @@ public class Plane extends Aircraft implements Flyable
 				break;
 		}
 		if (newCoordinates.height > 100) newCoordinates.height = 100;
-		if (newCoordinates.height < 1)
-		{
-			this.weatherTower.unregister(this);
-		}
+		if (newCoordinates.height < 1) this.weatherTower.unregister(this);
 		this.coordinates = newCoordinates;
 	}
 }
