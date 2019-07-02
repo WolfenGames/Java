@@ -11,8 +11,7 @@ public class Helicopter extends Aircraft implements Flyable
 
 	public Helicopter(String name, Coordinates coordinates)
 	{
-		this.name = name;
-		this.coordinates = coordinates;
+		super(name, coordinates);
 	}
 
 	@Override

@@ -11,8 +11,7 @@ public class Baloon extends Aircraft implements Flyable
 
 	public Baloon(String name, Coordinates coordinates)
 	{
-		this.name = name;
-		this.coordinates = coordinates;
+		super(name, coordinates);
 	}
 
 	@Override

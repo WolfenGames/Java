@@ -11,8 +11,7 @@ public class Plane extends Aircraft implements Flyable
 
 	public Plane(String name, Coordinates coordinates)
 	{
-		this.name = name;
-		this.coordinates = coordinates;
+		super(name, coordinates);
 	}
 
 	@Override
