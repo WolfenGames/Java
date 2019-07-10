@@ -48,6 +48,9 @@ public class Main {
 			br.close();
 		} catch (FileNotFoundException e) {
 			MyLogger.getLogger().ConsoleLog("File not found :: " + file);
+		} catch (Exception e)
+		{
+			MyLogger.getLogger().ConsoleLog("Error has occured :: " + e.toString());
 		}
 		for (int i = 0; i < iterations; i++)
 		{
