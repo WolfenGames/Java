@@ -15,8 +15,8 @@ public class AircraftFactory
 				return new Baloon(name, coordinates);
 			case "Helicopter":
 				return new Helicopter(name, coordinates);
-			case "Plane":
-				return new Plane(name, coordinates);
+			case "JetPlane":
+				return new JetPlane(name, coordinates);
 			default:
 				return null;
 		}

@@ -4,6 +4,7 @@ import za.co.julianwolf.classes.Aircraft;
 import za.co.julianwolf.classes.Coordinates;
 import za.co.julianwolf.classes.WeatherTower;
 import za.co.julianwolf.interfaces.Flyable;
+import za.co.julianwolf.logger.MyLogger;
 
 public class Helicopter extends Aircraft implements Flyable
 {
@@ -15,42 +16,44 @@ public class Helicopter extends Aircraft implements Flyable
 	}
 
 	@Override
-	public void registerTower(WeatherTower weatherTower) 
+	public void registerTower(WeatherTower weatherTower)
 	{
 		if (this.weatherTower != weatherTower)
 			this.weatherTower = weatherTower;
 	}
 
 	@Override
-	public void updateConditions() 
+	public void updateConditions()
 	{
-		Coordinates newCoordinates = new Coordinates(0, 0, 0);
 		String condition = weatherTower.getWeather(coordinates);
+		String pre ="Helicopter#" + this.name + "(" + this.id + "): ";
 		switch (condition)
 		{
 			case "RAIN":
-				newCoordinates.longitude = this.coordinates.getLongitude();
-				newCoordinates.latitude = this.coordinates.getLatitude() + 1;
-				newCoordinates.height = this.coordinates.getHeight();
+				this.coordinates.longitude += 5;
+				MyLogger.getLogger().log(pre + "O gosh..");
 				break;
 			case "SUN":
-				newCoordinates.longitude = this.coordinates.getLongitude();
-				newCoordinates.latitude = this.coordinates.getLatitude() + 10;
-				newCoordinates.height = this.coordinates.getHeight() + 2;
+				this.coordinates.longitude += 10;
+				this.coordinates.height += 2;
+				MyLogger.getLogger().log(pre + "ITS BRIGHT");
 				break;
 			case "SNOW":
-				newCoordinates.longitude = this.coordinates.getLongitude();
-				newCoordinates.latitude = this.coordinates.getLatitude();
-				newCoordinates.height = this.coordinates.getHeight() - 7;
+				this.coordinates.height -= 12;
+				MyLogger.getLogger().log(pre + "This is bumpy");
 				break;
 			case "FOG":
-				newCoordinates.longitude = this.coordinates.getLongitude();
-				newCoordinates.latitude = this.coordinates.getLatitude() + 1;
-				newCoordinates.height = this.coordinates.getHeight();
+				this.coordinates.longitude += 1;
+				MyLogger.getLogger().log(pre + "Hope I dont hit any zombies..");
 				break;
 		}
-		if (newCoordinates.height > 100) newCoordinates.height = 100;
-		if (newCoordinates.height < 1) this.weatherTower.unregister(this);
-		this.coordinates = newCoordinates;
+		if (this.coordinates.getHeight() > 100) this.coordinates.height = 100;
+		if (this.coordinates.getHeight() < 1)
+		{
+			this.coordinates.height = 0;
+			MyLogger.getLogger().log("Helicopter#" + this.name + "(" + this.id + ") Landing.");
+			MyLogger.getLogger().log("Helicopter#" + this.name + "(" + this.id + ") Long:" + this.coordinates.getLongitude() + " Lat:" + this.coordinates.getLatitude() + " Height:" + this.coordinates.getHeight());
+			this.weatherTower.unregister(this);
+		}
 	}
 }

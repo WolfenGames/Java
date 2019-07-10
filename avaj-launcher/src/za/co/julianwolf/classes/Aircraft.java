@@ -1,9 +1,11 @@
 package za.co.julianwolf.classes;
 
 import za.co.julianwolf.classes.Coordinates;
+import za.co.julianwolf.logger.MyLogger;
 
 public class Aircraft
 {
+	private static long counter = 0;
 	protected long id;
 	protected String name;
 	protected Coordinates coordinates;
@@ -13,5 +15,5 @@ public class Aircraft
 		this.coordinates = coordinates;
 		this.id = nextId();
 	}
-	private long nextId() { return id++; }// UUID.randomUUID(); };
+	private long nextId() { return counter++; }
 }

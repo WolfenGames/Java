@@ -6,11 +6,11 @@ import za.co.julianwolf.classes.WeatherTower;
 import za.co.julianwolf.interfaces.Flyable;
 import za.co.julianwolf.logger.MyLogger;
 
-public class Baloon extends Aircraft implements Flyable
+public class JetPlane extends Aircraft implements Flyable
 {
 	private WeatherTower weatherTower;
 
-	public Baloon(String name, Coordinates coordinates)
+	public JetPlane(String name, Coordinates coordinates)
 	{
 		super(name, coordinates);
 	}
@@ -26,33 +26,33 @@ public class Baloon extends Aircraft implements Flyable
 	public void updateConditions()
 	{
 		String condition = weatherTower.getWeather(coordinates);
-		String pre ="Baloon#" + this.name + "(" + this.id + "): ";
+		String pre ="JetPlane#" + this.name + "(" + this.id + "): ";
 		switch (condition)
 		{
 			case "RAIN":
-				this.coordinates.longitude -= 5;
-				MyLogger.getLogger().log(pre + "ITS WET!");
+				this.coordinates.latitude += 5;
+				MyLogger.getLogger().log(pre + "I can still see");
 				break;
 			case "SUN":
-				this.coordinates.longitude += 2;
-				this.coordinates.height += 4;
-				MyLogger.getLogger().log(pre + "Sunny Day.");
+				this.coordinates.latitude += 10;
+				this.coordinates.height += 2;
+				MyLogger.getLogger().log(pre + "I am no longer able to see");
 				break;
 			case "SNOW":
-				this.coordinates.height -= 15;
-				MyLogger.getLogger().log(pre + "ITS COLD AND WET!");
+				this.coordinates.height -= 7;
+				MyLogger.getLogger().log(pre + "I can see people freezing");
 				break;
 			case "FOG":
-				this.coordinates.height -= 3;
-				MyLogger.getLogger().log(pre + "I CANT SEE JACKSHIT!");
+				this.coordinates.latitude += 1;
+				MyLogger.getLogger().log(pre + "I cant see");
 				break;
 		}
 		if (this.coordinates.getHeight() > 100) this.coordinates.height = 100;
 		if (this.coordinates.getHeight() < 1)
 		{
 			this.coordinates.height = 0;
-			MyLogger.getLogger().log("Baloon#" + this.name + "(" + this.id + ") Landing.");
-			MyLogger.getLogger().log("Baloon#" + this.name + "(" + this.id + ") Long:" + this.coordinates.getLongitude() + " Lat:" + this.coordinates.getLatitude() + " Height:" + this.coordinates.getHeight());
+			MyLogger.getLogger().log("JetPlane#" + this.name + "(" + this.id + ") Landing.");
+			MyLogger.getLogger().log("JetPlane#" + this.name + "(" + this.id + ") Long:" + this.coordinates.getLongitude() + " Lat:" + this.coordinates.getLatitude() + " Height:" + this.coordinates.getHeight());
 			this.weatherTower.unregister(this);
 		}
 	}
