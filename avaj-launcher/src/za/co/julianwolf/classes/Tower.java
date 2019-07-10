@@ -1,6 +1,7 @@
 package za.co.julianwolf.classes;
 
 import za.co.julianwolf.interfaces.Flyable;
+import za.co.julianwolf.logger.MyLogger;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,7 @@ public class Tower
 		{
 			this.observers.add(flyable);
 			flyable.registerTower((WeatherTower)this);
+			MyLogger.getLogger().log("Flyable added to weatherTower");
 		}
 	};
 

@@ -13,5 +13,5 @@ public class Aircraft
 		this.coordinates = coordinates;
 		this.id = nextId();
 	}
-	private long nextId() { return 0; }// UUID.randomUUID(); };
+	private long nextId() { return id++; }// UUID.randomUUID(); };
 }
