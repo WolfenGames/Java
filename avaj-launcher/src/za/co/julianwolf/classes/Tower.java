@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Tower
+public abstract class Tower
 {
 	private ArrayList<Flyable> observers = new ArrayList<Flyable>();
 	public void register(Flyable flyable)
