@@ -44,7 +44,7 @@ public class JetPlane extends Aircraft implements Flyable
 				break;
 			case "FOG":
 				this.coordinates.latitude += 1;
-				MyLogger.getLogger().log(pre + "I cant see");
+				MyLogger.getLogger().log(pre + "I can't see");
 				break;
 		}
 		if (this.coordinates.getHeight() > 100) this.coordinates.height = 100;

@@ -31,7 +31,7 @@ public class Baloon extends Aircraft implements Flyable
 		{
 			case "RAIN":
 				this.coordinates.longitude -= 5;
-				MyLogger.getLogger().log(pre + "ITS WET!");
+				MyLogger.getLogger().log(pre + "IT'S WET!");
 				break;
 			case "SUN":
 				this.coordinates.longitude += 2;
@@ -40,11 +40,11 @@ public class Baloon extends Aircraft implements Flyable
 				break;
 			case "SNOW":
 				this.coordinates.height -= 15;
-				MyLogger.getLogger().log(pre + "ITS COLD AND WET!");
+				MyLogger.getLogger().log(pre + "IT'S COLD AND WET!");
 				break;
 			case "FOG":
 				this.coordinates.height -= 3;
-				MyLogger.getLogger().log(pre + "I CANT SEE JACKSHIT!");
+				MyLogger.getLogger().log(pre + "I CAN'T SEE JACKSHIT!");
 				break;
 		}
 		if (this.coordinates.getHeight() > 100) this.coordinates.height = 100;

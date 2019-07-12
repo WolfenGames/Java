@@ -36,7 +36,7 @@ public class Helicopter extends Aircraft implements Flyable
 			case "SUN":
 				this.coordinates.longitude += 10;
 				this.coordinates.height += 2;
-				MyLogger.getLogger().log(pre + "ITS BRIGHT");
+				MyLogger.getLogger().log(pre + "IT'S BRIGHT");
 				break;
 			case "SNOW":
 				this.coordinates.height -= 12;
