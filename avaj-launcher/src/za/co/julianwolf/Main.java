@@ -36,6 +36,8 @@ public class Main {
 					try
 					{
 						iterations = Integer.parseInt(st);
+						if (iterations > 100)
+							iterations = 100;
 					} catch (Exception e)
 					{
 						MyLogger.getLogger().log("Defaulting iterations to 1, due to invalid input on first line");

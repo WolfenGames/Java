@@ -59,10 +59,10 @@ public abstract class Tower
 							"(" +
 							x.getLong(flyable) +
 							") " +
-							" : UnRegistered to weather tower");
+							" : UnRegistered from weather tower");
 		} catch (Exception e)
 		{
-			MyLogger.getLogger().log("Tower says: " + val + " (Undefined) " + " : UnRegistered to tower");
+			MyLogger.getLogger().log("Tower says: " + val + " (Undefined) " + " : UnRegistered from weather tower");
 		}
 	};
 

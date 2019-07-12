@@ -32,9 +32,11 @@ public final class MyLogger{
 		{
 			if (aStrings.size() == 0)
 				return;
+			this.ConsoleLog("Printing to File...\nLogging to console\n\n");
 			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Simulation.txt"));
 			for (String s : aStrings) {
 				bufferedWriter.write(s);
+				this.ConsoleLog(s);
 				bufferedWriter.write("\n");
 			}
 			bufferedWriter.close();

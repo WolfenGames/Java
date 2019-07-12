@@ -1,6 +1,5 @@
 ./src/za/co/julianwolf/logger/MyLogger.java
 ./src/za/co/julianwolf/classes/WeatherTower.java
-./src/za/co/julianwolf/classes/WeatherEnums.java
 ./src/za/co/julianwolf/classes/Tower.java
 ./src/za/co/julianwolf/classes/Reflection.java
 ./src/za/co/julianwolf/classes/Aircraft.java
