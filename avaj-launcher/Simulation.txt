@@ -1,3 +1,4 @@
+Defaulting iterations to 1, due to invalid input on first line
 Tower says: Baloon#B1(0)  : Registered to weather tower
 Tower says: Baloon#B2(1)  : Registered to weather tower
 Tower says: JetPlane#J1(2)  : Registered to weather tower
@@ -7,15 +8,12 @@ Tower says: Helicopter#H3(5)  : Registered to weather tower
 Tower says: Baloon#B3(6)  : Registered to weather tower
 Tower says: JetPlane#J2(7)  : Registered to weather tower
 Tower says: Helicopter#H4(8)  : Registered to weather tower
-Baloon#B1(0): ITS COLD AND WET!
-Baloon#B1(0) Landing.
-Baloon#B1(0) Long:2 Lat:3 Height:0
-Tower says: Baloon#B1(0)  : UnRegistered to weather tower
-Baloon#B2(1): ITS WET!
-JetPlane#J1(2): I can still see
-Helicopter#H1(3): O gosh..
+Baloon#B1(0): Sunny Day.
+Baloon#B2(1): I CANT SEE JACKSHIT!
+JetPlane#J1(2): I cant see
+Helicopter#H1(3): Hope I dont hit any zombies..
 Helicopter#H2(4): ITS BRIGHT
-Helicopter#H3(5): Hope I dont hit any zombies..
-Baloon#B3(6): ITS COLD AND WET!
+Helicopter#H3(5): O gosh..
+Baloon#B3(6): ITS WET!
 JetPlane#J2(7): I can see people freezing
 Helicopter#H4(8): O gosh..

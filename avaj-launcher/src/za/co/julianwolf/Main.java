@@ -20,8 +20,8 @@ public class Main {
 	}
 
 	private static void Parse(String file) throws IOException {
-		AircraftFactory fac = new AircraftFactory();
 		WeatherTower wt = new WeatherTower();
+		final AircraftFactory fac = new AircraftFactory() {};
 		int			iterations = 0;
 		try
 		{
@@ -33,17 +33,30 @@ public class Main {
 			{
 				if (firstline)
 				{
-					iterations = Integer.parseInt(st);
+					try
+					{
+						iterations = Integer.parseInt(st);
+					} catch (Exception e)
+					{
+						MyLogger.getLogger().log("Defaulting iterations to 1, due to invalid input on first line");
+						iterations = 1;
+					}
 					firstline = false;
 				}
 				String[] split = st.split(" ");
 				Flyable newFlyable;
-				if (split.length == 5 && (newFlyable = fac.newAircraft(split[0],
-																		split[1],
-																		Integer.parseInt(split[2]),
-																		Integer.parseInt(split[3]),
-																		Integer.parseInt(split[4]))) != null)
+				try
+				{
+					if (split.length == 5 && (newFlyable = fac.newAircraft(split[0],
+																			split[1],
+																			Integer.parseInt(split[2]),
+																			Integer.parseInt(split[3]),
+																			Integer.parseInt(split[4]))) != null)
 					wt.register(newFlyable);
+				} catch (Exception e)
+				{
+					MyLogger.getLogger().ConsoleLog("invalid aircraft, Skipping...");
+				}
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
